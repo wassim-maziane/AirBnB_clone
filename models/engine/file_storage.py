@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 import json
 class FileStorage:
-    def __init__(self, file_path):
-        self.__file_path = file_path
-        self.__objects = {}
+    __file_path = 'file.json'
+    __objects = {}
     def all(self):
         return self.__objects
     def new(self, obj):
