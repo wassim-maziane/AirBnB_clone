@@ -10,7 +10,7 @@ class FileStorage:
         return self.__objects
 
     def new(self, obj):
-        key = f"{obj.__class__.__name__}.{obj.id}"
+        key = f"{obj.id}"
         self.__objects[key] = obj.to_dict()
 
     def save(self):
