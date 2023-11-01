@@ -33,7 +33,6 @@ except:
 fs.reload()
 
 all_reloaded = fs.all()
-print(all_reloaded)
 if len(all_reloaded.keys()) != len(ids):
     print("Missing after reload")
 
@@ -45,11 +44,11 @@ for id in ids:
     obj_reloaded = all_reloaded.get(id)
     if obj_reloaded is None:
         obj_reloaded = all_reloaded.get("{}.{}".format("BaseModel", id))
-        print(obj_reloaded)
     print(obj_reloaded.__class__.__name__)
     obj_created = objs_by_id[id]
     print(obj_reloaded.id == obj_created.id)
     print(obj_reloaded.created_at == obj_created.created_at)
+    print(obj_reloaded.updated_at, obj_created.updated_at)
     print(obj_reloaded.updated_at == obj_created.updated_at)
 
 try:
